@@ -1,0 +1,13 @@
+import re
+f=open('web.txt')
+string=f.read()
+f.close()
+#print(string)
+result_1=re.findall(r'.+\s+(http.*://.+\.\w{2,})\s.+Online shopping.+',string)
+#print(result_1)
+result_2=re.findall(r"(.+)\thttp.*://.+\.\w{3}\s.+China.+", string)
+#print(result_2)
+result_3=re.findall(r'.+\t(http.*://.{1,4}\.\w{2,}) .+ Social networking\s(.+?)\s.+',string)
+#print(result_3)
+result_4=re.findall(r'(.+).+(http.*)://.+\..+\.\w{2,}\s.+',string)
+print(result_4)

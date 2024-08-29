@@ -1,0 +1,13 @@
+import re
+f=open('logs.txt')
+string=f.read()
+f.close()
+#print(string)
+result_1=re.findall('Critical 1/1[1-6]/2020 .+ [A-Z]{2} (.+?) \d+',string)
+#print(result_1)
+result_2=re.findall(r".+/2020 (?:12|[1-3]):\d\d:\d\d PM (.+?) \d+", string)
+#print(result_2)
+result_3=re.findall(r".+ (.+\d) .+ [A-Z]{2} TPM \d+",string)
+#print(result_3)
+result_4=re.findall(r'.+ (1/2[4-7]/2020 8:\d+:\d+) [A-Z]{2} ',string)
+print(result_4)

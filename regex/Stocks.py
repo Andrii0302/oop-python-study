@@ -1,0 +1,13 @@
+import re
+f=open('stocks.txt')
+string=f.read()
+f.close()
+#print(string)
+result_1=re.findall(r'(.+?)\s+[0-9]+\.[0-9]+M\s+[1-4][0-9]\.[0-9]+B\s+[0-9]+\.[0-9]+',string)
+#print(result_1)
+result_2=re.findall(r'(.+?)\s+[0-9]+\.[0-9]+M\s+[1-2][0-9]\.[0-9]+B\s+1[0-4]+\.[0-9]+',string)
+#print(result_2)
+result_3=re.findall(r"(.+?)\s+[0-9]\.[0-9]+M\s+[0-9]+\.[0-9]+B\s+[0-9]+\.[0-9]+", string)
+#print(result_3)
+result_4=re.findall(r'(.+?)\s+[2468][0-9]*\.[0-9]+M\s+[0-9]+\.[0-9]+B\s+[0-9]+\.[0-9][13579]+',string)
+print(result_4)
